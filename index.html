@@ -1,0 +1,16 @@
+<html>
+  <head>
+    <script>
+      async function getNewCatName() {
+        const response = await fetch('http://localhost:3000/cat');
+        const newName = await response.text();
+
+        const catNameElement = document.getElementById('cat-name-goes-here');
+        catNameElement.textContent = newName;
+      }
+    </script>
+  </head>
+  <body>
+    <button onclick="getNewCatName()">Get cat name 🐈</button> <span id="cat-name-goes-here"></span>
+  </body>
+</html>
